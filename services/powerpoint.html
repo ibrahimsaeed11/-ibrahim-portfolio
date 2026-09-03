@@ -48,61 +48,24 @@
 
 <section class="projects">
   <div class="container">
-    <div class="projects-grid">
+    <div class="projects-grid" style="grid-template-columns: 1fr;">
 
       <div class="project-card will-reveal">
         <div class="project-media">
-          <!-- استبدل الـ div اللي جوه بفيديو أو صورة: <img src="../images/ppt-1.jpg" alt="عرض تخرج"> -->
-          <div class="media-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 15-4-4-9 9"/></svg>
-            <span>ضيف صورة أو فيديو العرض هنا</span>
-          </div>
+          <img id="rp-main-img" src="../images/research-1.jpg" alt="غلاف عرض Research Project">
         </div>
         <div class="project-info">
-          <h3>عرض مناقشة مشروع تخرج</h3>
-          <p>سلايدات مرتبة بترتيب منطقي من المقدمة للنتائج والتوصيات.</p>
-        </div>
-      </div>
-
-      <div class="project-card will-reveal" style="transition-delay:.05s">
-        <div class="project-media">
-          <!-- استبدل الـ div اللي جوه بفيديو أو صورة: <img src="../images/ppt-2.jpg" alt="عرض تسويقي"> -->
-          <div class="media-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 15-4-4-9 9"/></svg>
-            <span>ضيف صورة أو فيديو العرض هنا</span>
+          <h3>Research Project — عرض بحثي كامل</h3>
+          <p>عرض من 7 سلايدات: غلاف، محتويات، ملخص، منهجية، نتائج، مراجع، وختام. دوس على أي سلايد تحت تشوفه كبير فوق.</p>
+          <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
+            <img src="../images/research-1.jpg" onclick="document.getElementById('rp-main-img').src=this.src" alt="الغلاف" style="width:84px; height:auto; border-radius:8px; cursor:pointer; border:2px solid rgba(240,185,63,0.6);">
+            <img src="../images/research-2.jpg" onclick="document.getElementById('rp-main-img').src=this.src" alt="المحتويات" style="width:84px; height:auto; border-radius:8px; cursor:pointer; border:2px solid transparent;">
+            <img src="../images/research-3.jpg" onclick="document.getElementById('rp-main-img').src=this.src" alt="الملخص" style="width:84px; height:auto; border-radius:8px; cursor:pointer; border:2px solid transparent;">
+            <img src="../images/research-4.jpg" onclick="document.getElementById('rp-main-img').src=this.src" alt="المنهجية" style="width:84px; height:auto; border-radius:8px; cursor:pointer; border:2px solid transparent;">
+            <img src="../images/research-5.jpg" onclick="document.getElementById('rp-main-img').src=this.src" alt="النتائج" style="width:84px; height:auto; border-radius:8px; cursor:pointer; border:2px solid transparent;">
+            <img src="../images/research-6.jpg" onclick="document.getElementById('rp-main-img').src=this.src" alt="المراجع" style="width:84px; height:auto; border-radius:8px; cursor:pointer; border:2px solid transparent;">
+            <img src="../images/research-7.jpg" onclick="document.getElementById('rp-main-img').src=this.src" alt="الختام" style="width:84px; height:auto; border-radius:8px; cursor:pointer; border:2px solid transparent;">
           </div>
-        </div>
-        <div class="project-info">
-          <h3>عرض تقديمي تسويقي</h3>
-          <p>تصميم بصري جذاب لعرض فكرة منتج بشكل مختصر ومقنع.</p>
-        </div>
-      </div>
-
-      <div class="project-card will-reveal" style="transition-delay:.1s">
-        <div class="project-media">
-          <!-- استبدل الـ div اللي جوه بفيديو أو صورة: <img src="../images/ppt-3.jpg" alt="عرض دراسي"> -->
-          <div class="media-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 15-4-4-9 9"/></svg>
-            <span>ضيف صورة أو فيديو العرض هنا</span>
-          </div>
-        </div>
-        <div class="project-info">
-          <h3>عرض لمشروع دراسي جماعي</h3>
-          <p>توزيع المحتوى على سلايدات متوازنة، مش محشورة ومش فاضية.</p>
-        </div>
-      </div>
-
-      <div class="project-card will-reveal" style="transition-delay:.15s">
-        <div class="project-media">
-          <!-- استبدل الـ div اللي جوه بفيديو أو صورة: <img src="../images/ppt-4.jpg" alt="عرض شركة"> -->
-          <div class="media-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 15-4-4-9 9"/></svg>
-            <span>ضيف صورة أو فيديو العرض هنا</span>
-          </div>
-        </div>
-        <div class="project-info">
-          <h3>عرض تعريفي بشركة</h3>
-          <p>قالب موحّد بألوان وشعار العميل على كل سلايد بشكل متسق.</p>
         </div>
       </div>
 
@@ -159,6 +122,6 @@
   <div class="lightbox-inner"></div>
 </div>
 
-<script src="../assets/script.js"></script>
+<script src="../assets/script.js?v=2"></script>
 </body>
 </html>
