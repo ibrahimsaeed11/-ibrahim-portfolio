@@ -36,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // ---------- Scroll reveal for sections (IntersectionObserver, runs once) ----------
 const revealEls = document.querySelectorAll('.will-reveal');
 if (revealEls.length) {
+  revealEls.forEach(el => el.classList.add('pre'));
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -82,19 +83,45 @@ if (stage) {
   });
 }
 
+// ---------- Visitor counter (live, via CountAPI) ----------
+const visitorCountEl = document.getElementById('visitor-count');
+if (visitorCountEl) {
+  fetch('https://api.countapi.xyz/hit/ibrahimsaeed-portfolio-site/visits')
+    .then(res => res.json())
+    .then(data => { visitorCountEl.textContent = data.value.toLocaleString('ar-EG'); })
+    .catch(() => { visitorCountEl.textContent = '—'; });
+}
+
 // ---------- Lightbox for project media ----------
 const lightbox = document.querySelector('.lightbox');
 if (lightbox) {
   const lightboxInner = lightbox.querySelector('.lightbox-inner');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+
+  const openLightbox = (media) => {
+    lightboxInner.innerHTML = media.innerHTML;
+    lightbox.classList.add('open');
+  };
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+  };
+
   document.querySelectorAll('.project-media').forEach(media => {
-    media.addEventListener('click', () => {
-      lightboxInner.innerHTML = media.innerHTML;
-      lightbox.classList.add('open');
-    });
+    media.addEventListener('click', () => openLightbox(media));
   });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox || e.target.closest('.lightbox-close')) {
-      lightbox.classList.remove('open');
-    }
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
   });
 }
