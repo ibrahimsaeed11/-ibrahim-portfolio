@@ -83,12 +83,12 @@ if (stage) {
   });
 }
 
-// ---------- Visitor counter (live, via CountAPI) ----------
+// ---------- Visitor counter (live, via countapi.mileshilliard.com) ----------
 const visitorCountEl = document.getElementById('visitor-count');
 if (visitorCountEl) {
-  fetch('https://api.countapi.xyz/hit/ibrahimsaeed-portfolio-site/visits')
+  fetch('https://countapi.mileshilliard.com/api/v1/hit/ibrahimsaeed-portfolio-visits')
     .then(res => res.json())
-    .then(data => { visitorCountEl.textContent = data.value.toLocaleString('ar-EG'); })
+    .then(data => { visitorCountEl.textContent = Number(data.value).toLocaleString('ar-EG'); })
     .catch(() => { visitorCountEl.textContent = '—'; });
 }
 
